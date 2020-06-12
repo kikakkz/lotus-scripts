@@ -13,11 +13,11 @@ export ENV_LOTUS_REV=interop.6.8.1
 export ENV_LOTUS_SRC_DIR=$ENV_LOTUS_ROOT$ENV_LOTUS_REV
 
 export ENV_STORAGE_ROOT=/opt/data/filecoin
-export ENV_LOTUS_ROOT=$ENV_STORAGE_ROOT/.lotus
-export ENV_FIL_PARAM_CACHE=$ENV_STORAGE_ROOT/.lotusparamcache
-export ENV_LOTUS_STORAGE_ROOT=$ENV_STORAGE_ROOT/.lotusstorage
-export ENV_LOTUS_TMP_DIR=$ENV_STORAGE_ROOT/.lotustmpdir
-export ENV_LOTUS_WORKER_DIR=$ENV_STORAGE_ROOT/.lotusworker
+export ENV_LOTUS_ROOT=$ENV_STORAGE_ROOT/lotus
+export ENV_FIL_PARAM_CACHE=$ENV_STORAGE_ROOT/filecoin-proof-parameters
+export ENV_LOTUS_STORAGE_ROOT=$ENV_STORAGE_ROOT/lotusstorage
+export ENV_LOTUS_TMP_DIR=$ENV_STORAGE_ROOT/lotustmpdir
+export ENV_LOTUS_WORKER_DIR=$ENV_STORAGE_ROOT/lotusworker
 
 ##
 ## orig, ipfs, china

@@ -46,3 +46,6 @@ if [ ! -d $ENV_LOTUS_SRC_DIR -o 		\
 	echo "Lotus is not deployed, deploy now ~~"
 	./lotus-deploy.sh
 fi
+
+export STORAGE_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.xrDzqdy_ENvyxpTAX0mdNkk37rJ92CinM-EAtsnlmBg:/ip4/192.168.16.100/tcp/2345/http
+export FULLNODE_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.YMOrrvTGUmfZAqGOEq6lnE8oWFHsMHSHrIGDnKIJWWo:/ip4/192.168.16.100/tcp/1234/http
