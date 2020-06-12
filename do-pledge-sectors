@@ -16,7 +16,7 @@ while true; do
     done
 
     while true; do
-		sectors=`$EXEC_STORAGE_MINER sectors list`
+		sectors=`$EXEC_LOTUS_STORAGE_MINER sectors list`
     	p1=`echo $sectors | grep "PreCommit1"`
 		if [ "x" != "x$p1" ]; then break; fi
 		sleep 5
