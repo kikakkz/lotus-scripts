@@ -1,0 +1,5 @@
+#!/bin/bash
+
+source ./filecoin-common.sh
+
+./lotus-interop-6.8/lotus-seal-worker run --address $ENV_MACH_IP:2345 --precommit1=false
