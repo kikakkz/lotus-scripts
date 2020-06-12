@@ -18,7 +18,7 @@ done
 for dev in $devs; do
 	rc=`dmesg | grep "$dev" | grep "ixgbe"`
 	if [ "x" == "x$rc" ]; then continue; fi
-	rc=`dmesg | grep "$dev" | grep "ready"`
+	rc=`dmesg | grep "$dev" | grep "becomes ready"`
 	if [ "x" != "x$rc" ]; then candidates+="$dev "; fi
 done
 
