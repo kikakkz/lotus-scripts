@@ -17,7 +17,7 @@ cd $ENV_LOTUS_SRC_DIR
 REPLACE_FILE=$ENV_LOTUS_SRC_DIR/cmd/lotus-seal-worker/main.go
 PATCH_FILE=$REPLACE_FILE.patch
 lineno=`sed -n '/taskTypes = append(taskTypes, sealtasks.TTCommit2)/'= $REPLACE_FILE`
-if [ "x" != "x$lineno" -a ! -f $PATCH_FILEe ]; then
+if [ "x" != "x$lineno" -a ! -f $PATCH_FILE ]; then
 	sed -i "${lineno}i taskTypes = append(taskTypes, sealtasks.TTCommit1)" $REPLACE_FILE
 	touch $PATCH_FILE
 fi

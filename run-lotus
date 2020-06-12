@@ -1,0 +1,23 @@
+#!/bin/bash
+
+source ./filecoin-common.sh
+
+if [ ! -d $ENV_LOTUS_ROOT ]; then
+	$EXEC_LOTUS daemon &
+	sleep 20
+	pid=`pidof lotus`
+	kill -9 $pid
+fi
+
+LOTUS_CONFIG=$ENV_LOTUS_ROOT/config.toml
+sed -i "s/127.0.0.1/$ENV_MACH_IP/g" $LOTS_CONFIG
+sed -i "s/#  ListenAddress = \"/ListenAddress = \"/g" $LOTS_CONFIG
+sed -i "s/#  RemoteListenAddress = \"/RemoteListenAddress = \"/g" $LOTS_CONFIG
+
+while true; do
+	$EXEC_LOTUS daemon
+	##
+	## Let client to detect fail
+	##
+	sleep 60
+done
