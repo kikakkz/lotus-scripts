@@ -1,0 +1,26 @@
+#!/bin/bash
+
+source ./filecoin-common.sh
+
+export STORAGE_API_INFO=
+export ENV_WORKER_CNT=6
+
+while true; do
+	error=false
+
+	for id in `seq 1 $ENV_WORER_CNT`; do
+		WORKER_PATH=${ENV_LOTUS_WORKER_ROOT}_$id $EXEC_LOTUS_SEAL_WORKER run --address $ENV_MACH_IP:334$id --precommit1=true --precommit2=false --commit=false > lotus-seal-worker-$id.log > 2>&1 &
+		if [ 0 != $? ]; then error=true; break; fi
+	done
+	if [ "true" == "$error" ]; then killall -9 lotus-seal-worker; sleep 20; continue; fi
+
+	while true; do
+		$EXEC_LOTUS_STORAGE_MINER info
+		if [ 0 != $? ]; then break; fi
+		## Also check worker status
+		sleep 20
+	done
+	
+	killall -9 lotus-seal-worker
+	sleep 20
+done

@@ -28,7 +28,8 @@ while true; do
 
 	while true; do
 		$EXEC_LOTUS sync status
-		if [ 0 == $? ]; then sleep 20; continue; fi
+		if [ 0 != $? ]; then break; fi
+		sleep 20
 	done
 
 	pid=`pidof lotus-storage-miner`
