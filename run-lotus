@@ -10,9 +10,9 @@ if [ ! -d $ENV_LOTUS_ROOT ]; then
 fi
 
 LOTUS_CONFIG=$ENV_LOTUS_ROOT/config.toml
-sed -i "s/127.0.0.1/$ENV_MACH_IP/g" $LOTS_CONFIG
-sed -i "s/#  ListenAddress = \"/ListenAddress = \"/g" $LOTS_CONFIG
-sed -i "s/#  RemoteListenAddress = \"/RemoteListenAddress = \"/g" $LOTS_CONFIG
+sed -i "s/127.0.0.1/$ENV_MACH_IP/g" $LOTUS_CONFIG
+sed -i "s/#  ListenAddress = \"/ListenAddress = \"/g" $LOTUS_CONFIG
+sed -i "s/#  RemoteListenAddress = \"/RemoteListenAddress = \"/g" $LOTUS_CONFIG
 
 ##
 ## run 'lotus auth api-info --perm admin' to generate token

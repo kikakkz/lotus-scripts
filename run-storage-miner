@@ -1,0 +1,37 @@
+#!/bin/bash
+
+source ./filecoin-common.sh
+
+if [ ! -d $ENV_LOTUS_STORAGE_ROOT ]; then
+	$EXEC_LOTUS_STORAGE_MINER run &
+	sleep 20
+	pid=`pidof lotus-storage-miner`
+	kill -9 $pid
+fi
+
+LOTUS_STORAGE_CONFIG=$ENV_LOTUS_STORAGE_ROOT/config.toml
+sed -i "s/127.0.0.1/$ENV_MACH_IP/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  ListenAddress = \"/ListenAddress = \"/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  RemoteListenAddress = \"/RemoteListenAddress = \"/g" $LOTUS_STORAGE_CONFIG
+
+sed -i "s/#  AllowPreCommit1 = true\"/AllowPreCommit1 = false\"/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  AllowPreCommit2 = true\"/AllowPreCommit2 = false\"/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  AllowCommit = true\"/AllowCommit = false\"/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  AllowUnseal = true\"/AllowUnseal = false\"/g" $LOTUS_STORAGE_CONFIG
+
+##
+## run 'lotus auth api-info --perm admin' to generate token
+##
+while true; do
+	$EXEC_LOTUS_STORAGE_MINER run > lotus-storage-miner.log 2>&1 &
+	if [ 0 != $? ]; then sleep 20; continue; fi
+
+	while true; do
+		$EXEC_LOTUS sync status
+		if [ 0 == $? ]; then sleep 20; continue; fi
+	done
+
+	pid=`pidof lotus-storage-miner`
+	kill -9 $pid
+	sleep 20
+done
