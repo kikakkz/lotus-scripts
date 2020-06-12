@@ -1,0 +1,24 @@
+#!/bin/bash
+
+while true; do
+    while true; do
+		sectors=`./lotus-interop-6.8/lotus-storage-miner sectors list`
+    	p1=`echo $sectors | grep "PreCommit1"`
+		if [ "x" == "x$p1" ]; then break; fi
+		sleep 5
+	done
+
+	for round in `seq 0 1`; do
+		./lotus-interop-6.8/lotus-storage-miner sectors pledge
+		if [ 0 != $? ]; then echo "Fail to pledge sectors"; exit 1; fi
+    done
+
+    while true; do
+		sectors=`./lotus-interop-6.8/lotus-storage-miner sectors list`
+    	p1=`echo $sectors | grep "PreCommit1"`
+		if [ "x" != "x$p1" ]; then break; fi
+		sleep 5
+	done
+
+	./lotus-interop-6.8/lotus-storage-miner info
+done
