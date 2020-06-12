@@ -10,7 +10,7 @@ while true; do
 
 	while true; do
 		$EXEC_LOTUS_STORAGE_MINER info
-		if [ 0 == $? ]; then break; fi
+		if [ 0 != $? ]; then break; fi
 		sleep 20
 	done
 	
