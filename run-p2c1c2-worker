@@ -6,7 +6,7 @@ export STORAGE_API_INFO=
 export WORKER_PATH=$ENV_LOTUS_WORKER_ROOT
 
 while true; do
-	$EXEC_LOTUS_SEAL_WORKER run --address $ENV_MACH_IP:2345 --precommit1=false > lotus-seal-worker.log > 2>&1 &
+	$EXEC_LOTUS_SEAL_WORKER run --address $ENV_MACH_IP:2345 --precommit1=false > $ENV_LOG_DIR/lotus-seal-worker.log > 2>&1 &
 	if [ 0 != $? ]; then sleep 20; continue; fi
 
 	while true; do

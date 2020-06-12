@@ -18,7 +18,7 @@ sed -i "s/#  RemoteListenAddress = \"/RemoteListenAddress = \"/g" $LOTUS_CONFIG
 ## run 'lotus auth api-info --perm admin' to generate token
 ##
 while true; do
-	$EXEC_LOTUS daemon
+	$EXEC_LOTUS daemon > $ENV_LOG_DIR/lotus.log 2>&1
 	##
 	## Let client to detect fail
 	##
