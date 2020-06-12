@@ -35,7 +35,14 @@ esac
 
 export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1
 
-if [ ! -d $ENV_LOTUS_SRC_DIR ]; then
+export EXEC_LOTUS=$ENV_LOTUS_SRC_DIR/lotus
+export EXEC_LOTUS_STORAGE_MINER=$ENV_LOTUS_SRC_DIR/lotus-storage-miner
+export EXEC_LOTUS_SEAL_WORKER=$ENV_LOTUS_SRC_DIR/lotus-seal-worker
+
+if [ ! -d $ENV_LOTUS_SRC_DIR -o 		\
+	 ! -f $EXEC_LOTUS -o 				\
+	 ! -f $EXEC_LOTUS_STORAGE_MINER -o 	\
+	 ! -f $EXEC_LOTUS_SEAL_WORKER ]; then
 	echo "Lotus is not deployed, deploy now ~~"
 	./lotus-deploy.sh
 fi
