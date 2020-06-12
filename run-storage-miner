@@ -20,7 +20,7 @@ sed -i "s/#  AllowCommit = true\"/AllowCommit = false\"/g" $LOTUS_STORAGE_CONFIG
 sed -i "s/#  AllowUnseal = true\"/AllowUnseal = false\"/g" $LOTUS_STORAGE_CONFIG
 
 ##
-## run 'lotus auth api-info --perm admin' to generate token
+## run 'lotus-storage-miner auth api-info --perm admin' to generate token
 ##
 while true; do
 	$EXEC_LOTUS_STORAGE_MINER run > lotus-storage-miner.log 2>&1 &
