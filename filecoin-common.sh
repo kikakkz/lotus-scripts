@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source ./mach-env.sh
+mkdir -p $ENV_LOG_DIR
 
 case $ENV_PARAM_SOURCE in
 	china)
