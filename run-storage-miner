@@ -14,10 +14,10 @@ sed -i "s/127.0.0.1/$ENV_MACH_IP/g" $LOTUS_STORAGE_CONFIG
 sed -i "s/#  ListenAddress = \"/ListenAddress = \"/g" $LOTUS_STORAGE_CONFIG
 sed -i "s/#  RemoteListenAddress = \"/RemoteListenAddress = \"/g" $LOTUS_STORAGE_CONFIG
 
-sed -i "s/#  AllowPreCommit1 = true\"/AllowPreCommit1 = false\"/g" $LOTUS_STORAGE_CONFIG
-sed -i "s/#  AllowPreCommit2 = true\"/AllowPreCommit2 = false\"/g" $LOTUS_STORAGE_CONFIG
-sed -i "s/#  AllowCommit = true\"/AllowCommit = false\"/g" $LOTUS_STORAGE_CONFIG
-sed -i "s/#  AllowUnseal = true\"/AllowUnseal = false\"/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  AllowPreCommit1 = true/AllowPreCommit1 = false/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  AllowPreCommit2 = true/AllowPreCommit2 = false/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  AllowCommit = true/AllowCommit = false/g" $LOTUS_STORAGE_CONFIG
+sed -i "s/#  AllowUnseal = true/AllowUnseal = false/g" $LOTUS_STORAGE_CONFIG
 
 ##
 ## run 'lotus-storage-miner auth api-info --perm admin' to generate token
