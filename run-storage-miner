@@ -3,10 +3,7 @@
 source ./filecoin-common.sh
 
 if [ ! -d $ENV_LOTUS_STORAGE_ROOT ]; then
-	$EXEC_LOTUS_STORAGE_MINER run &
-	sleep 20
-	pid=`pidof lotus-storage-miner`
-	kill -9 $pid
+	./init-storage-miner
 fi
 
 LOTUS_STORAGE_CONFIG=$ENV_LOTUS_STORAGE_ROOT/config.toml
