@@ -6,6 +6,7 @@ export ENV_LOTUS_NODE_PORT=1234
 export ENV_LOTUS_STORAGE_MINER_IP=$ENV_LOTUS_NODE_IP
 export ENV_LOTUS_STORAGE_MINER_PORT=2345
 export ENV_LOG_DIR=./log
+ulimit -HSn 65536
 
 export ENV_WORKSPACE=$HOME/workspace/filecoin-project
 export ENV_LOTUS_ROOT=$ENV_WORKSPACE/lotus-
