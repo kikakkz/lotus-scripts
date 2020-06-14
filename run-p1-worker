@@ -8,6 +8,7 @@ while true; do
 	error=false
 
 	for id in `seq 1 $ENV_WORKER_CNT`; do
+		echo "Run worker $id"
 		WORKER_PATH=${ENV_LOTUS_WORKER_DIR}_$id $EXEC_LOTUS_SEAL_WORKER run --address $ENV_MACH_IP:334$id --precommit1=true --precommit2=false --commit=false > $ENV_LOG_DIR/lotus-seal-worker-$id.log 2>&1 &
 		if [ 0 != $? ]; then error=true; break; fi
 	done

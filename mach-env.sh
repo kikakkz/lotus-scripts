@@ -12,6 +12,8 @@ while true; do
 	target=`expr 2 \* $files`
 	ulimit -HSn $target
 	if [ 0 != $? ]; then break; fi
+	echo "Set max fd to $target"
+	files=`ulimit -n`
 done
 
 export ENV_WORKSPACE=$HOME/workspace/filecoin-project
