@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export ENV_SECTOR_SIZE=512MiB
 export ENV_LOTUS_NODE_IP=192.168.16.100
@@ -6,7 +6,13 @@ export ENV_LOTUS_NODE_PORT=1234
 export ENV_LOTUS_STORAGE_MINER_IP=$ENV_LOTUS_NODE_IP
 export ENV_LOTUS_STORAGE_MINER_PORT=2345
 export ENV_LOG_DIR=./log
-ulimit -HSn 65536
+
+files=`ulimit -n`
+while true; do
+	target=`expr 2 \* $files`
+	ulimit -HSn $target
+	if [ 0 != $? ]; then break; fi
+done
 
 export ENV_WORKSPACE=$HOME/workspace/filecoin-project
 export ENV_LOTUS_ROOT=$ENV_WORKSPACE/lotus-
