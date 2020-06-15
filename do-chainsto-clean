@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source ./filecoin-common.sh
+rm -rf $LOTUS_STORAGE_PATH
+rm -rf $LOTUS_PATH
+rm -rf $ENV_LOTUS_WORKER_DIR
+
+for id in `seq 1 $ENV_P1_WORKER_CNT`; do
+	rm -rf ${ENV_LOTUS_WORKER_DIR}_$id
+done

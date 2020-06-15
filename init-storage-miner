@@ -6,8 +6,7 @@ rm $LOTUS_STORAGE_PATH -rf
 
 case $ENV_SECTOR_SIZE in
 	512MiB)
-		# $EXEC_LOTUS_STORAGE_MINER init --actor=t02029 --owner=t3qhvmmpjvjikceibgw22lq3guptgymyrf33yev5eoww2a7pcnoomph3m22obzcheedejxf4spg2b7yerk4hmq
-		$EXEC_LOTUS_STORAGE_MINER init --actor=t02531 --owner=t3rdlykjv7ru3simnxx2yusdkmsgg6ay3kzlhotrlymnmjeghb53fmylefhlrcble6hwjipr7ft6krnbsbcyqa
+		$EXEC_LOTUS_STORAGE_MINER init --actor=t02537 --owner=t3r7adjrmm33dpa4yq7sgm4vuhivrylct6jbnvn5llaupfjw6nrvbnfsoqic4bx6wlzkhtk66khacasdjglvhq
 		;;
 	32GiB)
 		$EXEC_LOTUS_STORAGE_MINER init --actor=t02044 --owner=t3rdlykjv7ru3simnxx2yusdkmsgg6ay3kzlhotrlymnmjeghb53fmylefhlrcble6hwjipr7ft6krnbsbcyqa
