@@ -5,7 +5,7 @@ sudo apt-get install jq
 sudo apt-get install curl
 
 ./rust-setup.sh
-source ~/.cargo/env
+source $HOME/.cargo/env
 
 echo "[source.crates-io]" > ~/.cargo/config
 echo "registry = \"https://github.com/rust-lang/crates.io-index\"" >> ~/.cargo/config
@@ -16,4 +16,3 @@ echo "registry = \"https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index\"" >> ~
 
 rustup update
 
-exit 1

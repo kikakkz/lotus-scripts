@@ -2,7 +2,7 @@
 
 echo "Deploy lotus revision $ENV_LOTUS_REV to $ENV_LOTUS_SRC_DIR"
 
-./prepare-compiler
+source ./prepare-compiler
 
 if [ ! -d $ENV_LOTUS_SRC_DIR ]; then
 	git clone https://github.com/filecoin-project/lotus.git $ENV_LOTUS_SRC_DIR
