@@ -48,6 +48,6 @@ if [ ! -d $ENV_LOTUS_SRC_DIR -o 		\
 	./lotus-deploy.sh
 fi
 
-export FULLNODE_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.43PPEqfEV85CbULu5FI5EAMDweUheqiwPyn8ejtjuSk:/ip4/192.168.16.100/tcp/1234/http
+export FULLNODE_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.RtLusRomMXAwcj9WjoWgqYS3pSLxt3xmL7EcaoFB_bM:/ip4/192.168.16.112/tcp/1234/http
 
 export ENV_P1_WORKER_CNT=6

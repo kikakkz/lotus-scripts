@@ -10,7 +10,7 @@ export ENV_LOG_DIR=./log
 files=`ulimit -n`
 while true; do
 	target=`expr 2 \* $files`
-	ulimit -HSn $target > /dev/null 2>&1
+	ulimit -HSn $target
 	if [ 0 != $? ]; then break; fi
 	echo "Set max fd to $target"
 	files=`ulimit -n`
