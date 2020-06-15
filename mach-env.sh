@@ -18,7 +18,7 @@ done
 
 export ENV_WORKSPACE=$HOME/workspace/filecoin-project
 export ENV_LOTUS_ROOT=$ENV_WORKSPACE/lotus-
-export ENV_LOTUS_REV=interop.6.8.1
+export ENV_LOTUS_REV=master
 export ENV_LOTUS_SRC_DIR=$ENV_LOTUS_ROOT$ENV_LOTUS_REV
 
 export ENV_STORAGE_ROOT=/opt/data/filecoin
