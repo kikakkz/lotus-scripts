@@ -1,0 +1,19 @@
+#!/bin/bash
+
+sudo apt-get install make
+sudo apt-get install jq
+sudo apt-get install curl
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source ~/.cargo/env
+
+echo "[source.crates-io]" > ~/.cargo/config
+echo "registry = \"https://github.com/rust-lang/crates.io-index\"" >> ~/.cargo/config
+echo "replace-with = 'sjtu'" >> ~/.cargo/config
+
+echo "[source.sjtu]" >> ~/.cargo/config
+echo "registry = \"https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index\"" >> ~/.cargo/config
+
+rustup update
+
+exit 1
