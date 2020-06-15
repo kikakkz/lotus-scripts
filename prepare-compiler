@@ -4,7 +4,7 @@ sudo apt-get install make
 sudo apt-get install jq
 sudo apt-get install curl
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+./rust-setup.sh
 source ~/.cargo/env
 
 echo "[source.crates-io]" > ~/.cargo/config
