@@ -1,0 +1,3 @@
+#!/bin/bash
+
+export FULLNODE_API_INFO=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJBbGxvdyI6WyJyZWFkIiwid3JpdGUiLCJzaWduIiwiYWRtaW4iXX0.128uZaR5RE8nWDJoldn_UF95MvwSOMvqpl078EjzNWY:/ip4/192.168.16.112/tcp/1234/http
