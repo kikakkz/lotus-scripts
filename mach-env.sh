@@ -18,7 +18,7 @@ done
 
 export ENV_WORKSPACE=$HOME/workspace/filecoin-project
 export ENV_LOTUS_ROOT=$ENV_WORKSPACE/lotus-
-export ENV_LOTUS_REV=master
+export ENV_LOTUS_REV=next
 export ENV_LOTUS_SRC_DIR=$ENV_LOTUS_ROOT$ENV_LOTUS_REV
 
 export ENV_STORAGE_ROOT=/opt/data/filecoin
@@ -31,7 +31,7 @@ export ENV_LOTUS_WORKER_DIR=$ENV_STORAGE_ROOT/lotusworker
 ##
 ## orig, ipfs, china
 ##
-export ENV_PARAM_SOURCE=orig
+export ENV_PARAM_SOURCE=china
 
 source ./mach-ip.sh
 source ./gpu-env.sh
