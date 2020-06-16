@@ -27,8 +27,6 @@ fi
 REPLACE_FILE=$ENV_LOTUS_SRC_DIR/extern/filecoin-ffi/rust/rust-toolchain
 echo "nightly-2020-05-04" > $REPLACE_FILE
 
-export RUSTUP_DIST_SERVER="https://mirrors.tuna.tsinghua.edu.cn/rustup"
-export RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
 export GOPROXY=https://goproxy.cn,direct
 export FFI_BUILD_FROM_SOURCE=1
 export RUSTFLAGS="-C target-cpu=native -O"

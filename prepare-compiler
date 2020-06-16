@@ -14,6 +14,8 @@ echo "replace-with = 'sjtu'" >> ~/.cargo/config
 echo "[source.sjtu]" >> ~/.cargo/config
 echo "registry = \"https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index\"" >> ~/.cargo/config
 
-export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup
-rustup update
+rustup install nightly-2020-05-04
 
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt update
+sudo apt install golang-go
