@@ -52,7 +52,7 @@ fi
 export ENV_P1_WORKER_CNT=6
 
 if [ "xtrue" == "x$ENV_HAS_GPU" ]; then
-	export BELLMAN_NO_GPU=false
+	export BELLMAN_NO_GPU=0
 else
-	export BELLMAN_NO_GPU=true
+	export BELLMAN_NO_GPU=1
 fi
