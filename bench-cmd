@@ -1,4 +1,5 @@
 #!/bin/bash
 source ./filecoin-common-local.sh
 export FIL_PROOFS_MAXIMIZE_CACHING=0
+export RUST_LOG=trace
 $EXEC_BENCH $* --storage-dir=$ENV_STORAGE_ROOT/lotus-bench
