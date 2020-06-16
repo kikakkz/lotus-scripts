@@ -37,6 +37,7 @@ esac
 export FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1
 
 export EXEC_LOTUS=$ENV_LOTUS_SRC_DIR/lotus
+export EXEC_BENCH=$ENV_LOTUS_SRC_DIR/bench
 export EXEC_LOTUS_STORAGE_MINER=$ENV_LOTUS_SRC_DIR/lotus-storage-miner
 export EXEC_LOTUS_SEAL_WORKER=$ENV_LOTUS_SRC_DIR/lotus-seal-worker
 
@@ -49,3 +50,9 @@ if [ ! -d $ENV_LOTUS_SRC_DIR -o 		\
 fi
 
 export ENV_P1_WORKER_CNT=6
+
+if [ "xtrue" == "x$ENV_HAS_GPU" ]; then
+	export BELLMAN_NO_GPU=false
+else
+	export BELLMAN_NO_GPU=true
+fi

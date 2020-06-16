@@ -34,3 +34,4 @@ export ENV_LOTUS_WORKER_DIR=$ENV_STORAGE_ROOT/lotusworker
 export ENV_PARAM_SOURCE=orig
 
 source ./mach-ip.sh
+source ./gpu-env.sh
