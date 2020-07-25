@@ -16,6 +16,6 @@ echo "registry = \"https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index\"" >> ~
 
 rustup install nightly-2020-05-04
 
-sudo add-apt-repository ppa:longsleep/golang-backports
+# sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
 sudo apt install golang-go gcc git bzr jq pkg-config mesa-opencl-icd ocl-icd-opencl-dev
