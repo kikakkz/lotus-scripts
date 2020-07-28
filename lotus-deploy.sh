@@ -5,8 +5,10 @@ echo "Deploy lotus revision $ENV_LOTUS_REV to $ENV_LOTUS_SRC_DIR"
 source ./prepare-compiler
 
 if [ ! -d $ENV_LOTUS_SRC_DIR ]; then
-	git clone https://github.com/filecoin-project/lotus.git $ENV_LOTUS_SRC_DIR
-	if [ 0 != $? ]; then echo "Fail to clone lotus"; exit 1; fi
+	while true; do
+		git clone https://github.com/filecoin-project/lotus.git $ENV_LOTUS_SRC_DIR
+		if [ 0 != $? ]; then echo "Fail to clone lotus"; continue; fi
+	done
 	cd $ENV_LOTUS_SRC_DIR
 	git checkout $ENV_LOTUS_REV
 	if [ 0 != $? ]; then echo "Fail to checkout revision $ENV_LOTUS_REV"; exit 1; fi
