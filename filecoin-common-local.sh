@@ -35,9 +35,9 @@ case $ENV_SECTOR_SIZE in
 esac
 
 export EXEC_LOTUS=$ENV_LOTUS_SRC_DIR/lotus
-export EXEC_BENCH=$ENV_LOTUS_SRC_DIR/bench
-export EXEC_LOTUS_STORAGE_MINER=$ENV_LOTUS_SRC_DIR/lotus-storage-miner
-export EXEC_LOTUS_SEAL_WORKER=$ENV_LOTUS_SRC_DIR/lotus-seal-worker
+export EXEC_BENCH=$ENV_LOTUS_SRC_DIR/lotus-bench
+export EXEC_LOTUS_STORAGE_MINER=$ENV_LOTUS_SRC_DIR/lotus-miner
+export EXEC_LOTUS_SEAL_WORKER=$ENV_LOTUS_SRC_DIR/lotus-worker
 
 if [ ! -d $ENV_LOTUS_SRC_DIR -o 		\
 	 ! -f $EXEC_LOTUS -o 				\
